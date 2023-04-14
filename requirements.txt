@@ -10,3 +10,4 @@ pyinstaller
 psutil
 keyboard
 httpx
+pipwin
