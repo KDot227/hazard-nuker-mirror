@@ -1,7 +1,6 @@
 @echo off
 
-python -m pip install -r requirements.txt
+python -m pip install -U -r requirements.txt
 cls
-pipwin install cairocffi
-
+python -m pipwin install cairocffi
 python -m Hazard
