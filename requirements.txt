@@ -10,5 +10,4 @@ pyinstaller
 psutil
 keyboard
 httpx
-cairocffi
 pipwin
