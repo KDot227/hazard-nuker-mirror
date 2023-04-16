@@ -2,13 +2,16 @@
 
 cd /d %~dp0
 
-python -m pip install -U -r requirements.txt
-python -m pip uninstall -y cairocffi
-python -m pipwin uninstall cairocffi
-python -m pipwin install cairocffi
-python -m pip install cairocffi
+pip install -U -r requirements.txt
+pip uninstall -y cairocffi
+pipwin uninstall cairocffi
+pipwin install cairocffi
+pip install cairocffi
 
-echo python -m Hazard > start.bat
+echo @echo off > start.bat
+echo python -m Hazard >> start.bat
+echo pause >> start.bat
+echo exit >> start.bat
 start start.bat
 
 pause
