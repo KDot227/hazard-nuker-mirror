@@ -18,10 +18,9 @@ from util.plugins.common import *
 
 def search_for_updates():
     # Will add back soon
-    return
     clear()
     setTitle("Hazard Nuker Checking For Updates. . .")
-    r = requests.get("https://github.com/Rdimo/Hazard-Nuker/releases/latest")
+    r = requests.get("https://github.com/KDot227/hazard-nuker-mirror/releases/latest")
 
     soup = str(BeautifulSoup(r.text, "html.parser"))
     s1 = re.search("<title>", soup)
@@ -44,7 +43,9 @@ def search_for_updates():
             end="\n\n",
         )
         soup = BeautifulSoup(
-            requests.get("https://github.com/Rdimo/Hazard-Nuker/releases").text,
+            requests.get(
+                "https://github.com/KDot227/hazard-nuker-mirror/releases"
+            ).text,
             "html.parser",
         )
         for link in soup.find_all("a"):
@@ -82,7 +83,7 @@ def search_for_updates():
             # if they are running hazard source code
             else:
                 new_version_source = requests.get(
-                    "https://github.com/Rdimo/Hazard-Nuker/archive/refs/heads/master.zip"
+                    "https://github.com/KDot227/hazard-nuker-mirror/archive/refs/heads/main.zip"
                 )
                 with open("Hazard-Nuker-master.zip", "wb") as zipfile:
                     zipfile.write(new_version_source.content)
